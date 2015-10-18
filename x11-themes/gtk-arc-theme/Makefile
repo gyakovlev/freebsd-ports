@@ -22,6 +22,5 @@ CONFIGURE_WRKSRC=${WRKSRC}
 BUILD_WRKSRC=${WRKSRC}
 
 pre-patch:
-#	sed -i .bak s/"--no-preserve=mode,ownership"//g ${WRKSRC}/common/Makefile.am
 	@${REINPLACE_CMD} -e 's|--no-preserve=mode,ownership||g' ${WRKSRC}/common/Makefile.am
 .include <bsd.port.mk>
